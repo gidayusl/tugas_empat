@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.status_active
+    @articles = Article.all
   end
 
   def new
@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    
+    @article = Article.find(params[:id])
+  end
+  
+  def show
+    @article = Article.find(params[:id])
   end
   
   def create
@@ -19,6 +23,28 @@ class ArticlesController < ApplicationController
     else
         flash[:error] = "data not valid"
         render 'new'
+    end
+  end
+  
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params_article)
+        flash[:notice] = "Success Update Records"
+        redirect_to action: 'index'
+    else
+        flash[:error] = "data not valid"
+        render 'edit'
+    end
+  end
+  
+  def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy
+        flash[:notice] = "Success Delete a Record"
+        redirect_to action: 'index'
+    else
+        flash[:error] = "Fails Delete a Record"
+        redirect_to action: 'index'
     end
   end
 

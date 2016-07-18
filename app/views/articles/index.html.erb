@@ -1,6 +1,22 @@
-<% @articles.each do |article| %>
-<h3><%= article.title %></h3>
-<p><%= article.content %></p>
-<h4>status : <%= article.status %></h4>
-<hr/>
+<%= link_to(new_article_path, class: "btn btn-primary", role: "button") do %> 
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>New Article
 <% end %>
+<div class="row">
+  <div class="grid">
+
+    <% @articles.each do |article| %>
+    <div class="grid-item">
+      <h3><%= article.title %></h3>
+      <p>
+        <!-- <%= article.content.truncate(20) %> -->
+        <%= article.content %>
+        <%= link_to 'read more', article_path(article.id) %>
+      </p>
+      <h4>status : <%= article.status %></h4>
+      <p>
+        <span><%= link_to 'edit', edit_article_path(article.id) %><span> <span> | </span> <span><%= link_to 'delete', article_path(article.id), method: "DELETE", data: {confirm: 'Delete this data ? '} %><span>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>

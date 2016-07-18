@@ -1,17 +1,17 @@
 <%= form_for @article do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= @article.errors[:title].first unless @article.errors[:title].blank? %>
-<br/>
-<%= f.label :content %>
-<%= f.text_area :content, cols: 20, rows: 10 %>
-<%= @article.errors[:content].first unless @article.errors[:content].blank? %>
-<br/>
-<%= f.label :status %>
-<%= f.radio_button :status, "active" %>
-<%= label :article_status, 'active' %>
-<%= f.radio_button :status, "off", :checked => true %>
-<%= label :article_status, 'off' %>
-<br/>
-<%= f.submit :submit %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+    <span class="text-danger"><%= @article.errors[:title].first unless @article.errors[:title].blank? %></span>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control", cols: 20, rows: 10 %>
+    <span class="text-danger"><%= @article.errors[:content].first unless @article.errors[:content].blank? %></span>
+    <%= f.hidden_field :status %>
+  </div>
+  <div class="form-group">
+    <%= f.submit :submit, class: "btn btn-success" %>
+    <%= link_to 'Back', articles_path, class: "btn btn-warning" %>
+  </div>
 <% end %>
