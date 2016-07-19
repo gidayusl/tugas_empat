@@ -1,4 +1,4 @@
-<%= form_for @article do |f| %>
+<%= form_for @article, html: { multipart: true } do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
@@ -9,6 +9,10 @@
     <%= f.text_area :content, class: "form-control", cols: 20, rows: 10 %>
     <span class="text-danger"><%= @article.errors[:content].first unless @article.errors[:content].blank? %></span>
     <%= f.hidden_field :status %>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
   </div>
   <div class="form-group">
     <%= f.submit :submit, class: "btn btn-success" %>

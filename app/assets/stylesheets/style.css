@@ -4,26 +4,38 @@
   src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 body {
-    padding-top: 60px;
-    padding-bottom: 10px;
+  padding-top: 70px;
+  padding-bottom: 10px;
 }
 .navbar-inverse {
-    background-color: #ccffe5;
-    border-color: #001a4d;
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
 }
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-brand:hover {
-    color: #000;
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
+  color: #000;
 }
-.navbar-inverse .navbar-nav>.active>a, 
-.navbar-inverse .navbar-nav>.active>a:focus, 
-.navbar-inverse .navbar-nav>.active>a:hover {
-    color: #000;
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+  color: #000;
 }
-.navbar-inverse .navbar-nav>li>a,
-.navbar-inverse .navbar-nav>li>a:hover {
-    color: #000;
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:hover {
+  color: #000;
 }
-.grid .grid-item{
-  background-color: #f2e6ff;
+/*
+.btn-new {
+  background-color: #3377ff;
+}*/
+
+.grid {
+  margin-top: 15px;
+}
+.grid-item {
+  padding-bottom: 15px;
+}
+.grid-body {
+  background: #ccffe6;
+  border-radius: 5px;
+  padding: 15px;
+}
+.read-more{
+  font-style: italic;
 }

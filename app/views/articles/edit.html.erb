@@ -11,6 +11,10 @@
     <%= f.hidden_field :status %>
   </div>
   <div class="form-group">
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="form-group">
     <%= f.submit :submit, class: "btn btn-success" %>
     <%= link_to 'Back', articles_path, class: "btn btn-warning" %>
   </div>
