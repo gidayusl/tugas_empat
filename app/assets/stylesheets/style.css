@@ -20,11 +20,6 @@ body {
 .navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:hover {
   color: #000;
 }
-/*
-.btn-new {
-  background-color: #3377ff;
-}*/
-
 .grid {
   margin-top: 15px;
 }
@@ -39,3 +34,14 @@ body {
 .read-more{
   font-style: italic;
 }
+.btn-delete{
+  background: #ff8080;
+  color: #000;
+}
+.btn-edit{
+  background: #b3ff66;
+  color: #000;
+}
+/*.img-index{
+  width
+}*/

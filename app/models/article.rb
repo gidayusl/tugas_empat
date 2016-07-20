@@ -5,8 +5,9 @@ class Article < ApplicationRecord
     length: { minimum: 10 }
   validates :status, presence: true
   
-  default_scope {where(status: 'active ')}
+  default_scope {where(status: 'active')}
   
-  has_attached_file :picture, styles: { medium: "600x300>", thumb: "100x200>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :picture, #styles: {thumb: "100x200>" }, 
+    default_url: "/assets/:style/missing.png"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 end
