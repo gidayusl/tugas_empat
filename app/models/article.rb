@@ -7,7 +7,10 @@ class Article < ApplicationRecord
   
   default_scope {where(status: 'active')}
   
-  has_attached_file :picture, #styles: {thumb: "100x200>" }, 
-    default_url: "/assets/:style/missing.png"
-  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
+  has_attached_file :picture, #styles: {thumb: "100x100#"},
+    url: "/upload_images/:basename.:extension",
+    default_url: "/assets/missing.png"
+  validates_attachment :picture,
+    content_type: { content_type: /\Aimage\/.*\Z/ },size: { in: 0..200.kilobytes }
+  # validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 end
