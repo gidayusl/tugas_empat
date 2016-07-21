@@ -11,15 +11,6 @@
   <span class="text-danger"><%= @article.errors[:content].first unless @article.errors[:content].blank? %></span>
   <%= f.hidden_field :status %>
 </div>
-<!-- <div id="show_article_image" style="display:block">
-  <%= image_tag f.object.picture.url, class:"img-previous" %>
-  <a class="btn btn-hapus btn-default" style="cursor:pointer;" onclick="clear_image();" 
-
-title="Clear Image">
-  <span class="glyphicon glyphicon-trash"></span> Hapus</a>
-  </div>
-  <div id="input_article_image" style="display:none">
-  <%= f.file_field :picture %>
   </div> -->
 <div class="form-group">
   <%= f.file_field :picture %>
